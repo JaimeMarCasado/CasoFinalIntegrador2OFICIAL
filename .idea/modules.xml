@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/CasoFinalIntegrador2OFICIAL.iml" filepath="$PROJECT_DIR$/.idea/CasoFinalIntegrador2OFICIAL.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Gestion de Habitats/Gestion de Habitats.iml" filepath="$PROJECT_DIR$/Gestion de Habitats/Gestion de Habitats.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Zoologico/Zoologico.iml" filepath="$PROJECT_DIR$/Zoologico/Zoologico.iml" />
     </modules>
   </component>
 </project>
