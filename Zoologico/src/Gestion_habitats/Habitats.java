@@ -1,2 +1,5 @@
-package Gestion_habitats;public class Habitats {
+package Gestion_habitats;
+
+public class Habitats {
+    
 }
