@@ -1,4 +1,4 @@
-import Animales.Animal;
+
 import Animales.Animal_terrestre;
 
 public class Main {
