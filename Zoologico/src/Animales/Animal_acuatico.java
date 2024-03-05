@@ -48,17 +48,16 @@ public class Animal_acuatico extends Animal {
 
     @Override
     public String toString() {
-        return "Animal_acuatico{" +
-                "aletas=" + aletas +
-                ", branquias=" + branquias +
-                ", escamas=" + escamas +
-                ", tipo_agua='" + tipo_agua + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", especie='" + especie + '\'' +
-                ", salud=" + salud +
-                ", comportamiento=" + comportamiento +
-                ", alimentacion='" + alimentacion + '\'' +
-                ", ID=" + ID +
-                '}';
+        return "Animal_acuatico" +
+                "\n nombre='" + nombre +
+                "\n Aletas=" + aletas +
+                "\n branquias=" + branquias +
+                "\n escamas=" + escamas +
+                "\n tipo_agua='" + tipo_agua +
+                "\n especie='" + especie +
+                "\n salud=" + salud +
+                "\n comportamiento=" + comportamiento +
+                "\n alimentacion='" + alimentacion +
+                "\n ID=" + ID;
     }
 }

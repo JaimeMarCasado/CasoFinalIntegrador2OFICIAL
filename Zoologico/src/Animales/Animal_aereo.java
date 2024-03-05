@@ -1,5 +1,5 @@
 package Animales;
-class Animal_aereo extends Animal{
+public class Animal_aereo extends Animal{
     boolean vuela;
     boolean pico;
     boolean plumaje;
@@ -37,16 +37,15 @@ class Animal_aereo extends Animal{
 
     @Override
     public String toString() {
-        return "Animal_aereo{" +
-                "vuela=" + vuela +
-                ", pico=" + pico +
-                ", plumaje=" + plumaje +
-                ", nombre='" + nombre + '\'' +
-                ", especie='" + especie + '\'' +
-                ", salud=" + salud +
-                ", comportamiento=" + comportamiento +
-                ", alimentacion='" + alimentacion + '\'' +
-                ", ID=" + ID +
-                '}';
+        return "--Animal_aereo--" +
+                "\n vuela=" + vuela +
+                "\n pico=" + pico +
+                "\n plumaje=" + plumaje +
+                "\n nombre='" + nombre +
+                "\n especie='" + especie +
+                "\n salud=" + salud +
+                "\n comportamiento=" + comportamiento +
+                "\n alimentacion='" + alimentacion +
+                "\n ID=" + ID;
     }
 }

@@ -25,7 +25,7 @@ public class Main {
         return i;
     }
 
-    public static Animal CrearAnimalTerrestre(){
+    public static Animal_terrestre CrearAnimalTerrestre(){
         Scanner scan = new Scanner(System.in);
         System.out.println("HA ELEGIDO UN ANIMAL TERRESTRE: \n");
         System.out.println("Seleccione las características de su animal ");
@@ -50,9 +50,9 @@ public class Main {
         Animal_terrestre Animal1 = new Animal_terrestre(nombre, especie, salud, comportamiento,alimentacion,ID , patas, cola, pelaje);
         return Animal1;
     }
-    public static Animal CrearAnimalAcuatico(){
+    public static Animal_acuatico CrearAnimalAcuatico(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("HA ELEGIDO UN ANIMAL TERRESTRE: \n");
+        System.out.println("HA ELEGIDO UN ANIMAL ACUATICO: \n");
         System.out.println("Seleccione las características de su animal ");
         System.out.println("Nombre: ");
         String nombre = scan.next();
@@ -66,16 +66,44 @@ public class Main {
         String alimentacion = scan.next();
         System.out.println("Introduzca el ID: ");
         int ID = scan.nextInt();
-        System.out.println("Si tiene patas introduzca 1 // si no 0: ");
-        Boolean patas = scan.hasNext();
-        System.out.println("Si tiene cola introduzca 1 // si no 0: ");
-        Boolean cola = scan.hasNext();
-        System.out.println("Si tiene pelaje introduzca 1 // si no 0: ");
-        Boolean pelaje = scan.hasNext();
-        Animal_terrestre Animal1 = new Animal_terrestre(nombre, especie, salud, comportamiento,alimentacion,ID , patas, cola, pelaje);
+        System.out.println("Si tiene aletas 1 // si no 0: ");
+        Boolean aletas = scan.hasNext();
+        System.out.println("Si tiene branquias introduzca 1 // si no 0: ");
+        Boolean branquias = scan.hasNext();
+        System.out.println("Si tiene escamas introduzca 1 // si no 0: ");
+        Boolean escamas = scan.hasNext();
+        System.out.println("Introduzca el tipo de agua: ");
+        String tipo_agua = scan.next();
+        Animal_acuatico Animal1 = new Animal_acuatico(nombre, especie, salud, comportamiento,alimentacion,ID , aletas, branquias, escamas, tipo_agua);
+        return Animal1;
+    }
+    public static Animal_aereo CrearAnimalAereo(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("HA ELEGIDO UN ANIMAL ACUATICO: \n");
+        System.out.println("Seleccione las características de su animal ");
+        System.out.println("Nombre: ");
+        String nombre = scan.next();
+        System.out.println("Especie: ");
+        String especie = scan.next();
+        System.out.println("Si la salud es buena introduzca 1 // si es mala 0: ");
+        Boolean salud = scan.hasNext();
+        System.out.println("Si el comportamiento es bueno introduzca 1 // si es malo 0: ");
+        Boolean comportamiento = scan.hasNext();
+        System.out.println("Introduzca su alimentacion(Carnivora, herbivoro, omnivoro: ");
+        String alimentacion = scan.next();
+        System.out.println("Introduzca el ID: ");
+        int ID = scan.nextInt();
+        System.out.println("Si animal vuela introduzca 1 // si no 0: ");
+        Boolean vuela = scan.hasNext();
+        System.out.println("Si animal tiene pico introduzca 1 // si no 0: ");
+        Boolean pico = scan.hasNext();
+        System.out.println("Si tiene plumaje introduzca 1 // si no 0: ");
+        Boolean plumaje = scan.hasNext();
+        Animal_aereo Animal1 = new Animal_aereo(nombre, especie, salud, comportamiento,alimentacion, ID, vuela, pico, plumaje);
         return Animal1;
 
     }
+
     public static Habitats CrearHabitatTerrestre(){
         Scanner scan = new Scanner(System.in);
         System.out.println("HA ELEGIDO UN HABITAT TERRESTRE:\n");
@@ -88,7 +116,6 @@ public class Main {
         Habitats habitat1 = new Habitats(temperatura, humedad, limpieza);
         return habitat1;
     }
-
     public static Habitats CrearHabitatAcuatico(){
         Scanner scan = new Scanner(System.in);
         System.out.println("HA ELEGIDO UN HABITAT ACUATICO:\n");
@@ -115,19 +142,21 @@ public class Main {
         return habitat1;
 
     }
+
     private static Habitats CrearHabitat(int i){
         switch(i){
-            case 1: CrearHabitatTerrestre();
+            case 1: return CrearHabitatTerrestre();
                 break;
-            case 2: CrearHabitatAcuatico();
+            case 2: return CrearHabitatAcuatico();
                 break;
-            case 3: CrearHabitatAereo();
+            case 3: return CrearHabitatAereo();
                 break;
             default: {
                 System.out.println("INTRODUZCA UNA DE LAS OPCIONES CAZURRO \n");
                 PedirPorTecladoHabitat();
             }
         }
+        return null;
     }
     private static Animal CrearAnimal(int i){
         switch (i){
@@ -142,59 +171,11 @@ public class Main {
                 PedirPorTecladoAnimal();
             }
         }
-
-        if(i == 1){
-            System.out.println("Seleccione las características de su animal ");
-            System.out.println("Nombre: ");
-            String nombre = scan.next();
-            System.out.println("Especie: ");
-            String especie = scan.next();
-            System.out.println("Si la salud es buena introduzca 1 // si es mala 0: ");
-            Boolean salud = scan.hasNext();
-            System.out.println("Si el comportamiento es bueno introduzca 1 // si es malo 0: ");
-            Boolean comportamiento = scan.hasNext();
-            System.out.println("Introduzca su alimentacion(Carnivora, herbivoro, omnivoro: ");
-            String alimentacion = scan.next();
-            System.out.println("Introduzca el ID: ");
-            int ID = scan.nextInt();
-            System.out.println("Si tiene patas introduzca 1 // si no 0: ");
-            Boolean patas = scan.hasNext();
-            System.out.println("Si tiene cola introduzca 1 // si no 0: ");
-            Boolean cola = scan.hasNext();
-            System.out.println("Si tiene pelaje introduzca 1 // si no 0: ");
-            Boolean pelaje = scan.hasNext();
-            Animal_terrestre Animal1 = new Animal_terrestre(nombre, especie, salud, comportamiento,alimentacion,ID , patas, cola, pelaje);
-            return Animal1;
-        }if(i == 2){
-            System.out.println("Seleccione las características de su animal ");
-            System.out.println("Nombre: ");
-            String nombre = scan.next();
-            System.out.println("Especie: ");
-            String especie = scan.next();
-            System.out.println("Si la salud es buena introduzca 1 // si es mala 0: ");
-            Boolean salud = scan.hasNext();
-            System.out.println("Si el comportamiento es bueno introduzca 1 // si es malo 0: ");
-            Boolean comportamiento = scan.hasNext();
-            System.out.println("Introduzca su alimentacion(Carnivora, herbivoro, omnivoro: ");
-            String alimentacion = scan.next();
-            System.out.println("Introduzca el ID: ");
-            int ID = scan.nextInt();
-            System.out.println("Si tiene patas introduzca 1 // si no 0: ");
-            Boolean patas = scan.hasNext();
-            System.out.println("Si tiene cola introduzca 1 // si no 0: ");
-            Boolean cola = scan.hasNext();
-            System.out.println("Si tiene pelaje introduzca 1 // si no 0: ");
-            Boolean pelaje = scan.hasNext();
-            Animal_terrestre Animal1 = new Animal_terrestre(nombre, especie, salud, comportamiento,alimentacion,ID , patas, cola, pelaje);
-            return Animal1;
-
-        }
         return null;
     }
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-        Animal_terrestre Lola = new Animal_terrestre("Lola", "Canino", Boolean.TRUE, Boolean.TRUE, "Carnivoro", 51515, Boolean.TRUE, Boolean.TRUE, Boolean.TRUE);
+        Animal_terrestre Lola = new Animal_terrestre("Lola", "Canido", Boolean.TRUE, Boolean.TRUE, "Carnivoro", 51515, Boolean.TRUE, Boolean.TRUE, Boolean.TRUE);
         System.out.println(Lola);
         System.out.println(CrearAnimal(PedirPorTecladoAnimal()));
         System.out.println(CrearHabitat(PedirPorTecladoHabitat()));
