@@ -1,10 +1,12 @@
 
 import Animales.*;
+import Gestion_habitats.Habitats;
+
 import java.util.Scanner;
 
 
 public class Main {
-    public static int PedirPorTeclado(){
+    public static int PedirPorTecladoAnimal(){
         System.out.println("Introduzca que tipo de animal quiere crear:");
         System.out.println("1-Terrestre");
         System.out.println("2-Acuatico");
@@ -13,8 +15,86 @@ public class Main {
         int i = scan.nextInt();
         return i;
     }
-    private static Animal CrearAnimal(int i){
+    public static int PedirPorTecladoHabitat(){
+        System.out.println("Introduzca que tipo de habitat quiere crear:");
+        System.out.println("1-Terrestre");
+        System.out.println("2-Acuatico");
+        System.out.println("3-Aereo");
         Scanner scan = new Scanner(System.in);
+        int i = scan.nextInt();
+        return i;
+    }
+
+    public static Animal CrearAnimalTerrestre(){
+        
+    }
+    public static Habitats CrearHabitatTerrestre(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("HA ELEGIDO UN HABITAT TERRESTRE:\n");
+        System.out.println("Introduzca la temperatura en grados del habitat: ");
+        float temperatura = scan.nextFloat();
+        System.out.println("Introduzca la humedad en porcentaje del habitat: ");
+        float humedad = scan.nextFloat();
+        System.out.println("Si su habitat esta limpio introduzca 1 // si no introduzca 0: ");
+        boolean limpieza = scan.hasNext();
+        Habitats habitat1 = new Habitats(temperatura, humedad, limpieza);
+        return habitat1;
+    }
+
+    public static Habitats CrearHabitatAcuatico(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("HA ELEGIDO UN HABITAT ACUATICO:\n");
+        System.out.println("Introduzca la temperatura en grados del habitat: ");
+        float temperatura = scan.nextFloat();
+        System.out.println("Introduzca la humedad en porcentaje del habitat: ");
+        float humedad = scan.nextFloat();
+        System.out.println("Si su habitat esta limpio introduzca 1 // si no introduzca 0: ");
+        boolean limpieza = scan.hasNext();
+        Habitats habitat1 = new Habitats(temperatura, humedad, limpieza);
+        return habitat1;
+
+    }
+    public static Habitats CrearHabitatAereo(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("HA ELEGIDO UN HABITAT AEREO:\n");
+        System.out.println("Introduzca la temperatura en grados del habitat: ");
+        float temperatura = scan.nextFloat();
+        System.out.println("Introduzca la humedad en porcentaje del habitat: ");
+        float humedad = scan.nextFloat();
+        System.out.println("Si su habitat esta limpio introduzca 1 // si no introduzca 0: ");
+        boolean limpieza = scan.hasNext();
+        Habitats habitat1 = new Habitats(temperatura, humedad, limpieza);
+        return habitat1;
+
+    }
+    private static Habitats CrearHabitat(int i){
+        switch(i){
+            case 1: CrearHabitatTerrestre();
+                break;
+            case 2: CrearHabitatAcuatico();
+                break;
+            case 3: CrearHabitatAereo();
+                break;
+            default: {
+                System.out.println("INTRODUZCA UNA DE LAS OPCIONES CAZURRO \n");
+                PedirPorTecladoHabitat();
+            }
+        }
+    }
+    private static Animal CrearAnimal(int i){
+        switch (i){
+            case 1: CrearAnimalTerrestre();
+                break;
+            case 2: CrearAnimalAcuatico();
+                break;
+            case 3: CrearAnimalAereo();
+                break;
+            default: {
+                System.out.println("INTRODUZCA UNA OPCION VALIDA");
+                PedirPorTecladoAnimal();
+            }
+        }
+
         if(i == 1){
             System.out.println("Seleccione las características de su animal ");
             System.out.println("Nombre: ");
@@ -68,6 +148,7 @@ public class Main {
         System.out.println("Hello world!");
         Animal_terrestre Lola = new Animal_terrestre("Lola", "Canino", Boolean.TRUE, Boolean.TRUE, "Carnivoro", 51515, Boolean.TRUE, Boolean.TRUE, Boolean.TRUE);
         System.out.println(Lola);
-        System.out.println(CrearAnimal(PedirPorTeclado()));
+        System.out.println(CrearAnimal(PedirPorTecladoAnimal()));
+        System.out.println(CrearHabitat(PedirPorTecladoHabitat()));
     }
 }
