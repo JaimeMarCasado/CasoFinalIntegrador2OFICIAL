@@ -146,11 +146,8 @@ public class Main {
     private static Habitats CrearHabitat(int i){
         switch(i){
             case 1: return CrearHabitatTerrestre();
-                break;
             case 2: return CrearHabitatAcuatico();
-                break;
             case 3: return CrearHabitatAereo();
-                break;
             default: {
                 System.out.println("INTRODUZCA UNA DE LAS OPCIONES CAZURRO \n");
                 PedirPorTecladoHabitat();
