@@ -40,16 +40,15 @@ public class Animal_terrestre extends Animal{
 
     @Override
     public String toString() {
-        return "--Animal_terrestre--" +
-                "tiene patas=" + patas +
-                ", tiene cola=" + cola +
-                ", tiene pelaje=" + pelaje +
-                ", Su nombre='" + nombre + '\'' +
-                ", pertenece a la especie='" + especie + '\'' +
-                ", tiene buena salud=" + salud +
-                ", tiene buen comportamiento=" + comportamiento +
-                ", su alimentacion es='" + alimentacion + '\'' +
-                ", ID=" + ID +
-                '}';
+        return "--Animal_terrestre-- \n" +
+                "Tiene patas=" + patas +
+                "\nTiene cola=" + cola +
+                "\nTiene pelaje=" + pelaje+
+                "\nSu nombre='" + nombre +
+                "\nPertenece a la especie='" + especie +
+                "\nTiene buena salud=" + salud +
+                "\nTiene buen comportamiento=" + comportamiento +
+                "\nSu alimentacion es='" + alimentacion +
+                "\nID=" + ID;
     }
 }
