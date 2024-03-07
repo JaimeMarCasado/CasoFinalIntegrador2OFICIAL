@@ -1,7 +1,7 @@
 
 import Animales.*;
 import Gestion_habitats.*;
-import Utilities.Utilities;
+import Utilities.*;
 
 import java.util.Scanner;
 
