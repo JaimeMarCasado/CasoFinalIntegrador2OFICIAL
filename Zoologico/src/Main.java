@@ -1,6 +1,6 @@
 
 import Animales.*;
-import Gestion_habitats.Habitats;
+import Gestion_habitats.*;
 
 import java.util.Scanner;
 
