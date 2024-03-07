@@ -15,7 +15,7 @@ public class Habitats {
     public String toString() {
         return "--Habitats--" +
                 "\nTemperatura=" + temperatura +
-                "\nHumedad=" + humedad +
+                "\nHumedad=" + humedad + "%" +
                 "\nLimpieza=" + limpieza;
     }
 }

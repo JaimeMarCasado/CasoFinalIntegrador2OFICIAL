@@ -1,6 +1,7 @@
 
 import Animales.*;
 import Gestion_habitats.*;
+import Utilities.Utilities;
 
 import java.util.Scanner;
 
@@ -11,8 +12,7 @@ public class Main {
         System.out.println("1-Terrestre");
         System.out.println("2-Acuatico");
         System.out.println("3-Aereo");
-        Scanner scan = new Scanner(System.in);
-        int i = scan.nextInt();
+        int i = Utilities.leerEntero("");
         return i;
     }
     public static int PedirPorTecladoHabitat(){
@@ -20,34 +20,23 @@ public class Main {
         System.out.println("1-Terrestre");
         System.out.println("2-Acuatico");
         System.out.println("3-Aereo");
-        Scanner scan = new Scanner(System.in);
-        int i = scan.nextInt();
+        int i = Utilities.leerEntero("");
         return i;
     }
 
     public static Animal_terrestre CrearAnimalTerrestre(){
-        Scanner scan = new Scanner(System.in);
         System.out.println("HA ELEGIDO UN ANIMAL TERRESTRE: \n");
         System.out.println("Seleccione las características de su animal ");
-        System.out.println("Nombre: ");
-        String nombre = scan.next();
-        System.out.println("Especie: ");
-        String especie = scan.next();
-        System.out.println("Si la salud es buena introduzca 1 // si es mala 0: ");
-        Boolean salud = scan.hasNext();
-        System.out.println("Si el comportamiento es bueno introduzca 1 // si es malo 0: ");
-        Boolean comportamiento = scan.hasNext();
-        System.out.println("Introduzca su alimentacion(Carnivora, herbivoro, omnivoro: ");
-        String alimentacion = scan.next();
-        System.out.println("Introduzca el ID: ");
-        int ID = scan.nextInt();
-        System.out.println("Si tiene patas introduzca 1 // si no 0: ");
-        Boolean patas = scan.hasNext();
-        System.out.println("Si tiene cola introduzca 1 // si no 0: ");
-        Boolean cola = scan.hasNext();
-        System.out.println("Si tiene pelaje introduzca 1 // si no 0: ");
-        Boolean pelaje = scan.hasNext();
-        Animal_terrestre Animal1 = new Animal_terrestre(nombre, especie, salud, comportamiento,alimentacion,ID , patas, cola, pelaje);
+        String nombre = Utilities.leerCadena("Introduzca el nombre:");
+        String especie = Utilities.leerCadena("Introduzca la especie:");
+        Boolean salud = Utilities.leerBoolean("Si la salud es buena introduzca true // si es mala false:");
+        Boolean comportamiento = Utilities.leerBoolean("Si el comportamiento es buen introduzca true // si es mala false:");
+        String alimentacion = Utilities.leerCadena("Introduzca su alimentacion(Carnivora, herbivoro, omnivoro):");
+        int ID = Utilities.leerEntero("Introduzca el ID: ");
+        Boolean patas = Utilities.leerBoolean("Si tiene patas introduzca true // si no false: ");
+        Boolean cola = Utilities.leerBoolean("Si tiene cola introduzca true // si no false: ");
+        Boolean pelaje = Utilities.leerBoolean("Si tiene pelaje introduzca true // si no false: ");
+        Animal_terrestre Animal1 = new Animal_terrestre(nombre, especie, salud, comportamiento, alimentacion ,ID , patas, cola, pelaje);
         return Animal1;
     }
     public static Animal_acuatico CrearAnimalAcuatico(){
@@ -78,27 +67,20 @@ public class Main {
         return Animal1;
     }
     public static Animal_aereo CrearAnimalAereo(){
-        Scanner scan = new Scanner(System.in);
         System.out.println("HA ELEGIDO UN ANIMAL ACUATICO: \n");
         System.out.println("Seleccione las características de su animal ");
-        System.out.println("Nombre: ");
-        String nombre = scan.next();
-        System.out.println("Especie: ");
-        String especie = scan.next();
+        String nombre = Utilities.leerCadena("Introduzca el nombre: ");
+        String especie = Utilities.leerCadena("Introduzca la especie");
         System.out.println("Si la salud es buena introduzca 1 // si es mala 0: ");
-        Boolean salud = scan.hasNext();
+        Boolean salud = Utilities.leerBoolean("Si la salud es buena introduzca true // si es mala false:");
         System.out.println("Si el comportamiento es bueno introduzca 1 // si es malo 0: ");
-        Boolean comportamiento = scan.hasNext();
+        Boolean comportamiento = Utilities.leerBoolean("Si el comportamiento es bueno introduzca true // si es mala false:");
         System.out.println("Introduzca su alimentacion(Carnivora, herbivoro, omnivoro: ");
-        String alimentacion = scan.next();
-        System.out.println("Introduzca el ID: ");
-        int ID = scan.nextInt();
-        System.out.println("Si animal vuela introduzca 1 // si no 0: ");
-        Boolean vuela = scan.hasNext();
-        System.out.println("Si animal tiene pico introduzca 1 // si no 0: ");
-        Boolean pico = scan.hasNext();
-        System.out.println("Si tiene plumaje introduzca 1 // si no 0: ");
-        Boolean plumaje = scan.hasNext();
+        String alimentacion = Utilities.leerCadena("Introduzca su alimentacion(Carnivora, herbivoro, omnivoro: ");
+        int ID = Utilities.leerEntero("Introduzca el ID: ");
+        Boolean vuela = Utilities.leerBoolean("Si animal vuela introduzca true // si no false: ");
+        Boolean pico = Utilities.leerBoolean("Si su animal tiene pico introduzca true // si no false: ");
+        Boolean plumaje = Utilities.leerBoolean("Si su animal tiene plumaje introduzca true // si no false: ");
         Animal_aereo Animal1 = new Animal_aereo(nombre, especie, salud, comportamiento,alimentacion, ID, vuela, pico, plumaje);
         return Animal1;
 
@@ -117,14 +99,11 @@ public class Main {
         return habitat1;
     }
     public static Habitats CrearHabitatAcuatico(){
-        Scanner scan = new Scanner(System.in);
         System.out.println("HA ELEGIDO UN HABITAT ACUATICO:\n");
-        System.out.println("Introduzca la temperatura en grados del habitat: ");
-        float temperatura = scan.nextFloat();
-        System.out.println("Introduzca la humedad en porcentaje del habitat: ");
-        float humedad = scan.nextFloat();
-        System.out.println("Si su habitat esta limpio introduzca 1 // si no introduzca 0: ");
-        boolean limpieza = scan.hasNext();
+        System.out.println("");
+        float temperatura = Utilities.leerFloat("Introduzca la temperatura del habitat: ");
+        float humedad = Utilities.leerFloat("Introduzca el porcentaje de humedad del habitat: ");
+        boolean limpieza = Utilities.leerBoolean("Si el habitat esta limpio introduzca true // si no false: ");
         Habitats habitat1 = new Habitats(temperatura, humedad, limpieza);
         return habitat1;
 
